@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<frame tittle="俄罗斯方块" windowWidth="1200" windowHignt="700" windowUp="20" 
+		width="1196" height="674" padding="16" windowBorder="7" colorType="7"
+		maxX="9" maxY="17" maxNumbelSize="5">
+		<layer className="com.lv.ui.LayerBackground" x="0" y="0" w="0" h="0"/>
+		<layer className="com.lv.ui.LayerDatabase" x="49" y="40" w="320" h="266"/>
+		<layer className="com.lv.ui.LayerDisk" x="49" y="350" w="320" h="266"/>
+		<layer className="com.lv.ui.LayerGame" x="431" y="40" w="320" h="576"/>
+		<layer className="com.lv.ui.LayerButton" x="813" y="40" w="320" h="70"/>
+		<layer className="com.lv.ui.LayerNext" x="813" y="154" w="162" h="100"/>
+		<layer className="com.lv.ui.LayerLevel" x="989" y="154" w="144" h="100"/>
+		<layer className="com.lv.ui.LayerPoint" x="813" y="298" w="320" h="146"/>
+		<layer className="com.lv.ui.LayerAbout" x="813" y="488" w="320" h="128"/>
+	</frame>
+	<system>
+		<scoreRules>
+			<rule rows="1" score="0"/>
+			<rule rows="2" score="5"/>
+			<rule rows="3" score="15"/>
+			<rule rows="4" score="20"/>
+		</scoreRules>
+		<exp start="200" increase="20"/>
+		<rects>
+			<rect rollAble="true"><point x="4" y="0"/><point x="3" y="0"/><point x="4" y="1"/><point x="5" y="0"/></rect>
+			<rect rollAble="true"><point x="4" y="0"/><point x="3" y="0"/><point x="5" y="0"/><point x="6" y="0"/></rect>
+			<rect rollAble="true"><point x="4" y="0"/><point x="3" y="0"/><point x="3" y="1"/><point x="5" y="0"/></rect>
+			<rect rollAble="true"><point x="4" y="0"/><point x="3" y="0"/><point x="5" y="1"/><point x="5" y="0"/></rect>
+			<rect rollAble="true"><point x="4" y="0"/><point x="3" y="1"/><point x="4" y="1"/><point x="5" y="0"/></rect>
+			<rect rollAble="true"><point x="4" y="0"/><point x="3" y="0"/><point x="4" y="1"/><point x="5" y="1"/></rect>
+			<rect rollAble="false"><point x="4" y="0"/><point x="5" y="0"/><point x="4" y="1"/><point x="5" y="1"/></rect>
+		</rects>
+	</system>
+	<data>
+		<database className="com.lv.dao.DatabaseDaoImpl">
+			<param key="driverClass" value="com.mysql.jdbc.Driver"/>
+			<param key="url" value="jdbc:mysql://172.16.200.17:3306/tetris?useUnicode=true&amp;characterEncoding=UTF-8"/>
+			<param key="user" value="root"/>
+			<param key="password" value="root"/>
+		</database>
+		<diskdata className="com.lv.dao.DiskDataDaoImpl" dataPath="savadata/recode.dat" />
+	</data>
+</game>
